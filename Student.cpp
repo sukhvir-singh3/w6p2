@@ -26,6 +26,7 @@ namespace sdds{
 		std::getline(istr, id, ',');
 		std::getline(istr, course_num, ',');
 
+
 		m_count = std::stoi(course_num);
 		courses = new std::string[m_count];
 		size_t loop = 0;
@@ -43,6 +44,11 @@ namespace sdds{
 		m_name = trim(name);
 		m_age = trim(age);
 		m_id = trim(id);
+
+		if(m_id[0] != 'S' || !(std::stoi(m_age))){
+			std::cout << "problem here" << std::endl;
+			throw std::invalid_argument(name + "++Invalid record!");	
+		}
 
 		delete[] courses;
 	}

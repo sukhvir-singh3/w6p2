@@ -19,8 +19,7 @@ namespace sdds{
 		m_id = trim(id);
 		m_age = trim(age);
 
-		if(m_id[0] != 'E' || !(std::stoi(age))){
-			m_age = "";
+		if(m_id[0] != 'E' || !(std::stoi(m_age))){
 			throw std::invalid_argument(name + "++Invalid record!");	
 		}
 	}
@@ -51,11 +50,9 @@ namespace sdds{
 	} 
 
 	void Employee::display(std::ostream& out)const{
-		if(m_id[0] != 'E' || m_age != ""){
 			out << "| " << std::left << std::setw(10) << status() << " | "
 		   	 << std::setw(10) << m_id << " | " 
 		       << std::setw(20) << m_name << " | " 
 		    	 << std::setw(3) << m_age << " | " << std::endl;
-		}
 	}
 }

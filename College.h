@@ -20,7 +20,7 @@ namespace sdds{
 
 			template<typename T>
 			void select(const T& test, std::list<const Person*>& persons){
-				for(auto& person: persons){
+				for(auto& person: m_persons){
 					if(test(person))
 						persons.push_back(person);	
 				}

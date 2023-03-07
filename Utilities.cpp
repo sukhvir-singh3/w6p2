@@ -12,7 +12,11 @@ namespace sdds{
 			ss.ignore();
 			return new Employee(ss);
 		}
-		else if(status == 's' || status == 'S'){
+		else if(status == 'S' || status == 's'){
+			ss.ignore();
+			return new Student(ss);
+		}
+		else if(status == 'P' || status == 'p'){
 			ss.ignore();
 			return new Student(ss);
 		}

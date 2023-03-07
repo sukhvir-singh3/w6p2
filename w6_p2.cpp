@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 	{
 		// TODO: Create a lambda expression that receives as parameter `const sdds::Person*`
 		//         and returns true if the person is student.
-		auto students = [](const sdds::Person* person) { return person->status() == "S"; };
+		auto students = [](const sdds::Person* person) { return person->status() == "S" || person->status() == "s"; };
 		theCollege.select(students, persons);
 	
 		std::cout << "|                                        Test #3 Students in the college!                                              |\n";
@@ -63,7 +63,7 @@ int main(int argc, char** argv)
 	{
 		// TODO: Create a lambda expression that receives as parameter `const sdds::Person*`
 		//         and returns true if the person is professor.
-		auto professors = [](const sdds::Person* person) { return dynamic_cast<const sdds::Person*>(person) != nullptr; };
+		auto professors = [](const sdds::Person* person) { return person->status() == "p" || person->status() == "P"; };
 
 		theCollege.select(professors, persons);
 	
