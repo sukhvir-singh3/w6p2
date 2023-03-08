@@ -3,6 +3,7 @@
 #include <istream>
 #include <stdexcept>
 #include "Employee.h"
+#include "Professor.h"
 
 namespace sdds{
 
@@ -13,14 +14,14 @@ namespace sdds{
 
 		std::getline(istr, name, ',');
 		std::getline(istr, age, ',');
-		std::getline(istr, id, '\n');
+		std::getline(istr, id, ',');
 
 		m_name = trim(name);
 		m_id = trim(id);
 		m_age = trim(age);
 
 		if(m_id[0] != 'E' || !(std::stoi(m_age))){
-			throw std::invalid_argument(name + "++Invalid record!");	
+			throw std::invalid_argument(trim(name) + "++Invalid record!");	
 		}
 	}
 
@@ -50,9 +51,11 @@ namespace sdds{
 	} 
 
 	void Employee::display(std::ostream& out)const{
-			out << "| " << std::left << std::setw(10) << status() << " | "
+			out << "| " << std::left << std::setw(10) << "Employee" << " | "
 		   	 << std::setw(10) << m_id << " | " 
 		       << std::setw(20) << m_name << " | " 
-		    	 << std::setw(3) << m_age << " | " << std::endl;
+		    	 << std::setw(3) << m_age << " | ";
+			 if(status() == "Employee")
+				 out << std::endl;
 	}
 }

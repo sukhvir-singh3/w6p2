@@ -7,6 +7,7 @@
 #include "Person.h"
 #include "Employee.h"
 #include "Student.h"
+#include "Professor.h"
 
 namespace sdds{
 	Person* buildInstance(std::istream& in);

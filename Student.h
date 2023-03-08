@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include "Person.h"
+#include "College.h"
 
 namespace sdds{
+	class College;
 	class Student: public Person{
 		private:
 			std::string m_name;
@@ -13,6 +15,7 @@ namespace sdds{
 			std::string* m_courses;
 			size_t m_count;
 		public:
+			int test = 2;
 			Student(const Student& copy) = delete;
 			Student& operator=(const Student& copy) = delete;
 			Student(std::istream& istr);

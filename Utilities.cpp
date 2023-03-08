@@ -18,7 +18,7 @@ namespace sdds{
 		}
 		else if(status == 'P' || status == 'p'){
 			ss.ignore();
-			return new Student(ss);
+			return new Professor(ss);
 		}
 		return nullptr;
 	}

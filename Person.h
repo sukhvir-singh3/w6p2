@@ -8,6 +8,7 @@ namespace sdds
 	class Person
 	{
 	public:
+		static int test;
 		virtual std::string status() const = 0;
 		virtual std::string name() const = 0;
 		virtual std::string age() const = 0;
