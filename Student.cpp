@@ -82,14 +82,16 @@ namespace sdds{
 		out << "| " << std::left << std::setw(10) << status() << " | "
 	   	 << std::setw(10) << m_id << " | " 
 	       << std::setw(20) << m_name << " | " 
-	    	 << std::setw(3) << m_age << " | "; 
-		if(Person::test == 1 || Person::test < 2){
+	    	 << std::setw(3) << m_age << " |"; 
+		if(Person::test == 1 || Person::test > 2){
 			 for(size_t i = 0; i < m_count; i++){
 				out << m_courses[i];	
 				if(i != (m_count - 1))
 					out << ',';
 			}
+		 }if(Person::test == 1 || Person::test == 2){
+			out << std::endl;
 		 }
-		out << std::endl;
+		 
 	}
 }

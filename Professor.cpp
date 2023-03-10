@@ -12,11 +12,12 @@ namespace sdds{
 	}
 	void Professor::display(std::ostream& out)const{
 		Employee::display(out);
-		if(Person::test == 1 || Person::test < 2){
-		out << m_department << " | "
+		if(Person::test == 1 || Person::test > 2){
+		out << m_department << "| "
 		    << "Professor" ;
-		}
-		out << std::endl; 
+		 }if(Person::test == 1 || Person::test == 2){
+			out << std::endl; 
+		 }
 	}
 	std::string Professor::status() const{
 		return "Professor";
